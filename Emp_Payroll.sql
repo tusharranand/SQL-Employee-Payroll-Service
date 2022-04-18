@@ -15,3 +15,6 @@ insert into Employee_Payroll (Name,Salary,StartDate) values
 ('Charlie',350640,'2018-12-26')
 
 select * from Employee_Payroll
+
+select Salary from Employee_Payroll where Name = 'Bill'
+select Name from Employee_Payroll where StartDate between '2018-01-01' and '2022-04-18'
