@@ -18,3 +18,8 @@ select * from Employee_Payroll
 
 select Salary from Employee_Payroll where Name = 'Bill'
 select Name from Employee_Payroll where StartDate between '2018-01-01' and '2022-04-18'
+
+alter table Employee_Payroll add Gender varchar(1)
+
+update Employee_Payroll set Gender = 'M'
+update Employee_Payroll set Gender = 'F' where Name = 'Hema'
