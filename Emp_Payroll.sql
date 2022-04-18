@@ -11,8 +11,8 @@ StartDate datetime
 )
 
 insert into Employee_Payroll (Name,Salary,StartDate) values 
-('Bill',533500,'2017-05-15'),
-('Charlie',350640,'2018-12-26')
+('Rekha',697820,'2016-11-09'),
+('Jaya',354339,'2018-03-18')
 
 select * from Employee_Payroll
 
@@ -22,4 +22,18 @@ select Name from Employee_Payroll where StartDate between '2018-01-01' and '2022
 alter table Employee_Payroll add Gender varchar(1)
 
 update Employee_Payroll set Gender = 'M'
-update Employee_Payroll set Gender = 'F' where Name = 'Hema'
+update Employee_Payroll set Gender = 'F' where Name in ('Rekha','Jaya')
+
+select Gender, sum(Salary) as Total_Salary from Employee_Payroll group by Gender
+select Gender, avg(Salary) as Average_Salary from Employee_Payroll group by Gender
+select Gender, min(Salary) as Minimum from Employee_Payroll group by Gender
+select Gender, max(Salary) as Maximum from Employee_Payroll group by Gender
+select Gender, count(*) as Male_or_Female from Employee_Payroll group by Gender
+
+select Gender,
+count(*) as Male_or_Female,
+sum(Salary) as Total_Salary,
+avg(Salary) as Average_Salary,
+min(Salary) as Minimum,
+max(Salary) as Maximum 
+from Employee_Payroll group by Gender
