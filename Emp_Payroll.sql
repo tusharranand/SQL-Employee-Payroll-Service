@@ -11,5 +11,7 @@ StartDate datetime
 )
 
 insert into Employee_Payroll (Name,Salary,StartDate) values 
-('Tushar',30450,'2022-02-03'),
-('Hema',39781,'2021-08-21')
+('Bill',533500,'2017-05-15'),
+('Charlie',350640,'2018-12-26')
+
+select * from Employee_Payroll
