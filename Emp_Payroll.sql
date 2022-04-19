@@ -18,6 +18,7 @@ select * from Employee_Payroll
 
 select Salary from Employee_Payroll where Name = 'Bill'
 select Name from Employee_Payroll where StartDate between '2018-01-01' and '2022-04-18'
+select Name from Employee_Payroll where StartDate between '2018-01-01' and GETDATE()
 
 alter table Employee_Payroll add Gender varchar(1)
 
@@ -37,3 +38,24 @@ avg(Salary) as Average_Salary,
 min(Salary) as Minimum,
 max(Salary) as Maximum 
 from Employee_Payroll group by Gender
+
+create table Employee_Department(
+ID int not null,
+Department varchar(50) not null,
+Phone bigint, 
+Address varchar(100),
+)
+
+insert into Employee_Department(ID,Department,Phone,Address) values
+(1,'IT',9653217890,'Ghaziabad'),
+(2,'Admin',9512364078,'Mumbai'),
+(3,'Sales',9632145087,'Delhi'),
+(4,'Management',9012457863,'Lucknow'),
+(5,'Sales',9965877410,'Pune'),
+(6,'IT',9663322115,'Bengaluru')
+
+select * from Employee_Department
+
+select Employee_Payroll.Emp_ID, Name, Salary, StartDate, Gender, Department, Phone, Address
+from Employee_Payroll 
+left join Employee_Department on Employee_Payroll.Emp_ID = Employee_Department.ID
