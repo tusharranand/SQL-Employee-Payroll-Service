@@ -9,6 +9,7 @@ CREATE PROCEDURE [UpdateDetails]
 @ID int,
 @Salary bigint
 AS
+SET XACT_ABORT ON
 SET NOCOUNT ON
 BEGIN
 begin try

@@ -88,3 +88,4 @@ left join Payroll on Employee_Payroll.Emp_ID = Payroll.ID
 
 exec GetAllEmployeeDetails
 exec UpdateDetails 1, 30450
+exec GetAllDetails_BetweenGivenDates '2017-01-01', '2018-12-31'

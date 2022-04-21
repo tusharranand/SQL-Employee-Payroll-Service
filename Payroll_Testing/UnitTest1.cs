@@ -37,5 +37,14 @@ namespace Payroll_Testing
             employee = program.UpdateSalary(Emp_ID, newSalary);
             Assert.AreEqual(newSalary, employee.Salary);
         }
+        [Test]
+        public void Retrieve_Details_FromDatabase_BetweenGivenDates()
+        {
+            List<Employee> employees = new List<Employee>();
+            DateTime FirstDate = DateTime.Parse("2017-01-01");
+            DateTime LastDate = DateTime.Parse("2018-12-31");
+            employees = program.RetrieveFromDatabase_BetweenGivenDates(FirstDate, LastDate);
+            Assert.AreEqual(3, employees.Count);
+        }
     }
 }
