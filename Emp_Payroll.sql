@@ -87,3 +87,4 @@ left join Employee_Department on Employee_Payroll.Emp_ID = Employee_Department.I
 left join Payroll on Employee_Payroll.Emp_ID = Payroll.ID
 
 exec GetAllEmployeeDetails
+exec UpdateDetails 1, 30450
