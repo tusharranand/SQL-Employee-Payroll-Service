@@ -46,5 +46,24 @@ namespace Payroll_Testing
             employees = program.RetrieveFromDatabase_BetweenGivenDates(FirstDate, LastDate);
             Assert.AreEqual(3, employees.Count);
         }
+        [Test]
+        public void Insert_New_Employee_Details()
+        {
+            employee = new Employee();
+            employee.Name = "TestEmployee";
+            employee.Salary = 100000;
+            employee.StartDate = DateTime.Now;
+            employee.Gender = "M";
+            employee.Department = "Marketing";
+            employee.Phone = 9638527410;
+            employee.Address = "India";
+            employee.BasicPay = 5000;
+            employee.Deductions = 500;
+            employee.TaxablePay = 400;
+            employee.IncomeTax = 250;
+            employee.NetPay = 600;
+            int result = program.InsertNewEmployee(employee);
+            Assert.AreEqual(1, result);
+        }
     }
 }
