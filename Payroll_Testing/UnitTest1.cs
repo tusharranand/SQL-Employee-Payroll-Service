@@ -65,5 +65,12 @@ namespace Payroll_Testing
             int result = program.InsertNewEmployee(employee);
             Assert.AreEqual(1, result);
         }
+        [Test]
+        public void Remove_Employee_Details_Return_Expected()
+        {
+            int ID = 11;
+            int result = program.RemoveEmployee(ID);
+            Assert.AreEqual(1, result);
+        }
     }
 }

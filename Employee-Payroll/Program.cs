@@ -165,5 +165,30 @@ namespace Employee_Payroll
                 return (int)result;
             }
         }
+        public int RemoveEmployee(int ID)
+        {
+            string SPName = "dbo.RemoveEmployeeData";
+            try
+            {
+                using (connection)
+                {
+                    Connect();
+                    SqlCommand command = new SqlCommand(SPName, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID", ID);
+                    var resultPara = command.Parameters.Add("@result", SqlDbType.Int);
+                    resultPara.Direction = ParameterDirection.ReturnValue;
+                    command.ExecuteNonQuery();
+                    Dissconnect();
+                    var result = resultPara.Value;
+                    return (int)result;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }
